@@ -10,7 +10,7 @@ const Modal = ({ show, setShow, selectedData }) => {
             <h3>{selectedData.videoTitle}</h3>
             <button onClick={() => setShow(false)}>X</button>
           </div>
-          <video width="100%" height="100%" controls>
+          <video width="100%" height="100%" autoPlay muted controls>
             <source src={selectedData.videoLink} type="video/mp4"></source>
           </video>
         </div>

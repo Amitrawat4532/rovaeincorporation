@@ -39,7 +39,7 @@ function Pdfviewer({ pdfSrc, formData }) {
           ></iframe>
         </div>
         <div id="mySidebar" class="sidebar">
-          <a href="javascript:void(0)" class="closebtn" onClick={closeNav}>
+          <a class="closebtn" onClick={closeNav}>
             &times;
           </a>
 
