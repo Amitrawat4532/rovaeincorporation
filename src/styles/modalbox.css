@@ -1,0 +1,41 @@
+.modalContainer{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(24, 23, 23, 0.792);
+    position: absolute;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalBox{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 500px;
+    height: 340px;
+    position: relative;
+}
+.modalBox div{
+    width: 100%;
+    padding: 2px 5px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.modalBox button{
+    background: transparent;
+    border: 0;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 5px;
+}
+.modalBox button:hover{
+    background: gray;
+}
+.modalBox h3{
+    padding: 5px;
+}

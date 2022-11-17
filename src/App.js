@@ -1,24 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Pdfviewer from "./pages/Pdfviewer";
+import Task_one from "./component/task_one";
+
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { useState } from "react";
 
 function App() {
+  const [pdfSrc, setPdfSrc] = useState(
+    "https://mozilla.github.io/pdf.js/web/viewer.html"
+  );
+
+  const [formData, setFormData] = useState([
+    {
+      videoTitle: "",
+      videoThumbnail: "",
+      videoLink: "",
+    },
+  ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          {/* <Route element={}></Route> */}
+          <Route
+            exact
+            path="/"
+            element={
+              <Task_one
+                setPdfSrc={setPdfSrc}
+                formData={formData}
+                setFormData={setFormData}
+              />
+            }
+          ></Route>
+          <Route
+            exact
+            path="/Pdfviewer"
+            element={
+              <Pdfviewer
+                pdfSrc={pdfSrc}
+                formData={formData}
+                setFormData={setFormData}
+              />
+            }
+          ></Route>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
