@@ -6,9 +6,7 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { useState } from "react";
 
 function App() {
-  const [pdfSrc, setPdfSrc] = useState(
-    "https://mozilla.github.io/pdf.js/web/viewer.html"
-  );
+  const [pdfSrc, setPdfSrc] = useState();
 
   const [formData, setFormData] = useState([
     {
@@ -29,6 +27,7 @@ function App() {
             element={
               <Task_one
                 setPdfSrc={setPdfSrc}
+                pdfSrc={pdfSrc}
                 formData={formData}
                 setFormData={setFormData}
               />

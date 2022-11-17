@@ -3,9 +3,7 @@ import "../styles/task_one.css";
 
 import { useNavigate } from "react-router-dom";
 
-function Task_one({ setPdfSrc, formData, setFormData }) {
-  const [pdfLink, setPdfLink] = useState();
-
+function Task_one({ setPdfSrc, formData, setFormData, pdfSrc }) {
   const Navigate = useNavigate();
 
   const Addform = () => {
@@ -27,7 +25,6 @@ function Task_one({ setPdfSrc, formData, setFormData }) {
 
   const GenerateButton = () => {
     // console.log(pdfLink);
-    setPdfSrc(pdfLink);
     Navigate("/Pdfviewer");
   };
 
@@ -51,8 +48,8 @@ function Task_one({ setPdfSrc, formData, setFormData }) {
             type="text"
             placeholder="Add your pdf link here"
             id="inputmain"
-            value={pdfLink}
-            onChange={(e) => setPdfLink(e.target.value)}
+            value={pdfSrc}
+            onChange={(e) => setPdfSrc(e.target.value)}
           ></input>
         </div>
 
